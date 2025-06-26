@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+public class Solutuion {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int number;
+        int sum = 0;
+
+        do {
+            number = scanner.nextInt();
+            if (number != -1) {
+                sum += number;
+            }
+        } while (number != -1);
+
+        System.out.println(sum);
+        scanner.close();
+    }
+}
