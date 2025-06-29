@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int size = scanner.nextInt();
+        
+        int[] array = new int[size];
+        
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+        }
+        
+        int elementToFind = scanner.nextInt();
+        
+        boolean found = false;
+        
+        for (int num : array) {
+            if (num == elementToFind) {
+                found = true;
+                break;
+            }
+        }
+        
+        if (found) {
+            System.out.println(elementToFind + " is presented in an array.");
+        } else {
+            System.out.println(elementToFind + " is not presented in an array.");
+        }
+
+        scanner.close();
+    }
+}
