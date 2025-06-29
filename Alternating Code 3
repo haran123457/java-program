@@ -1,0 +1,51 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        String input = sc.nextLine();
+        
+        Set<Character> uniqueChars = new HashSet<>();
+        for (char ch : input.toCharArray()) {
+            uniqueChars.add(ch);
+        }
+        
+        if (uniqueChars.size() != 2) {
+            System.out.println("No");
+            return;
+        }
+        
+        char[] chars = input.toCharArray();
+        char firstChar = chars[0];
+        char secondChar = (firstChar == uniqueChars.iterator().next()) ? uniqueChars.iterator().next() : uniqueChars.iterator().next();
+        
+        boolean isAlternating = true;
+        for (int i = 0; i < chars.length; i++) {
+            if (i % 2 == 0) {
+                if (chars[i] != firstChar) {
+                    isAlternating = false;
+                    break;
+                }
+            } else {
+                if (chars[i] != secondChar) {
+                    isAlternating = false;
+                    break;
+                }
+            }
+        }
+        
+        if (isAlternating) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+        
+        sc.close();
+    }
+}
