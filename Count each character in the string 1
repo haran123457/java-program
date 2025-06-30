@@ -1,0 +1,57 @@
+nguage: Java 7
+
+ Open in editor
+1
+import java.io.*;
+2
+import java.util.*;
+3
+import java.text.*;
+4
+import java.math.*;
+5
+import java.util.regex.*;
+6
+​
+7
+public class Solution {
+8
+​
+9
+    public static void main(String[] args) {
+10
+        Scanner sc=new Scanner(System.in);
+11
+        String Str=sc.nextLine();
+12
+        char[] letters = Str.toCharArray();
+13
+        for(int i = 0; i<letters.length; i++) {
+14
+            if(letters[i] == '\0') {
+15
+                continue;
+16
+            }
+17
+            int count = 1;
+18
+            for(int j = i+1; j<letters.length; j++) {
+19
+                if(letters[i] == letters[j]) {
+20
+                    count++;
+21
+                    letters[j] = '\0';
+22
+                }
+23
+            }
+24
+            System.out.println(letters[i] + "   " + count);
+25
+        }
+26
+    }
+27
+}
